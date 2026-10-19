@@ -744,15 +744,16 @@ Outputs:
 All tray state changes are handled by the same block of code. States are the same
 as the ones [up here](#0x0a---get-dvd-tray-state).
 
-### 0x70 - Thermal shutdown imminent
+### 0x70 - Thermal shutdown triggered
 
 Outputs:
 
 0. Command `0x83`
 1. Fixed byte `0x70`
 
-Sent on Trinity and above when temperatures are above trip temperatures, sent a few seconds
-before the SMC shuts off the system.
+Sent on Trinity and above when temperatures are above trip temperatures and the SMC has
+started the thermal shutdown process and the CPU will be turned off within roughly 5
+seconds. The official 360 OS will display a message box when this is fired.
 
 ## See also
 
