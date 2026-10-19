@@ -744,6 +744,16 @@ Outputs:
 All tray state changes are handled by the same block of code. States are the same
 as the ones [up here](#0x0a---get-dvd-tray-state).
 
+### 0x70 - Thermal shutdown imminent
+
+Outputs:
+
+0. Command `0x83`
+1. Fixed byte `0x70`
+
+Sent on Trinity and above when temperatures are above trip temperatures, sent a few seconds
+before the SMC shuts off the system.
+
 ## See also
 
 xenon-emu SMC code (some of these are wrong)
